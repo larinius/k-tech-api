@@ -6,7 +6,7 @@ const routeManager = require('./route/route.manager.js')
 const db = require("./models/index");
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const swaggerDocs = require('./swagger.js')
+// const swaggerDocs = require('./swagger.js')
 const passport = require('passport');
 const { jwtStrategy } = require('./config/passport');
 const helmet = require('helmet');
@@ -34,7 +34,7 @@ app.use(passport.initialize());
 passport.use('jwt', jwtStrategy);
 
 routeManager(app)
-swaggerDocs(app, process.env.PORT)
+// swaggerDocs(app, process.env.PORT)
 
 // error handler
 app.use(function (err, req, res, next) {
@@ -42,7 +42,7 @@ app.use(function (err, req, res, next) {
     res.status(500).json({
         status: 'fail',
         code  : 500,
-        error : `Can't find ${err.stack}`
+        error : `Error 500. Can't find ${err.stack}`
     });
 });
 
@@ -51,7 +51,7 @@ app.use(function (req, res, next) {
     res.status(404).json({
         status: 'fail',
         code  : 404,
-        error : `Can't find ${req.originalUrl}`
+        error : `Error 404. Can't find ${req.originalUrl}`
     });
 });
 

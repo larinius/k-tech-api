@@ -24,9 +24,6 @@ module.exports = {
       password: {
         type: Sequelize.STRING
       },
-      gender: {
-        type: Sequelize.STRING
-      },
       active: {
         type: Sequelize.INTEGER
       },
@@ -38,9 +35,6 @@ module.exports = {
       },
       token_expire: {
         type: Sequelize.STRING
-      },
-      birthday: {
-        type: Sequelize.DATE
       },
       role: {
         type: Sequelize.STRING

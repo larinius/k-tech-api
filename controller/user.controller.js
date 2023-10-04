@@ -46,9 +46,12 @@ const deleteUser = catchAsync( async (req, res) => {
     res.status(httpStatus.NO_CONTENT).send();
 });
 
-const getAllUsers =  catchAsync(async (req, res) => {
-    const users = await User.findAll();
-    res.send({users});
+const getAllUsers = catchAsync(async (req, res) => {
+    const users = await User.findAll({
+        attributes: ['id', 'firstname', 'lastname']
+    });
+
+    res.send({ users });
 });
 
 

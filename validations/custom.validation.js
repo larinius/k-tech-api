@@ -1,6 +1,10 @@
+const Joi = require('joi');
+const integerId = Joi.number().integer();
+
 const objectId = (value, helpers) => {
-  if (!value.match(/^[0-9a-fA-F]{24}$/)) {
-    return helpers.message('"{{#label}}" must be a valid mongo id');
+  const { error } = integerId.validate(value);
+  if (error) {
+    return helpers.error('any.invalid');
   }
   return value;
 };
