@@ -1,22 +1,22 @@
 {
   "development": {
     "username": "root",
-    "password": "",
-    "database": "api_db_development",
+    "password": "12345",
+    "database": "k-tech",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "",
+    "password": "12345",
     "database": "api_db_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "",
-    "database": "api_db_production",
+    "password": "12345",
+    "database": "k-tech",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
